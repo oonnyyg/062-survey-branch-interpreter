@@ -1,0 +1,40 @@
+{
+  "entry": "q1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "default_next": "q2",
+      "options": [
+        {"value": "yes", "next": "q2"},
+        {"value": "no", "next": "q3"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "integer",
+      "min": 0,
+      "max": 100,
+      "default_next": "END",
+      "rules": [
+        {"min": 0, "max": 30, "next": "q3"},
+        {"min": 31, "max": 60, "next": "END"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "default_next": "END",
+      "options": [
+        {"value": "good", "next": "END"},
+        {"value": "bad", "next": "END"}
+      ]
+    }
+  ],
+  "responses": [
+    {"id": "r001", "answers": {"q1": "yes", "q2": 25, "q3": "good"}},
+    {"id": "r002", "answers": {"q1": "no", "q3": "bad", "q2": 99}},
+    {"id": "r003", "answers": {"q1": "yes", "q2": true}},
+    {"id": "r004", "answers": {"q1": "yes"}}
+  ]
+}

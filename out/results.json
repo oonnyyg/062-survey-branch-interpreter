@@ -1,0 +1,84 @@
+{
+  "results": [
+    {
+      "id": "r001",
+      "status": "completed",
+      "path": [
+        {
+          "question": "q1",
+          "answer": "yes",
+          "matched": "option \"yes\"",
+          "next": "q2"
+        },
+        {
+          "question": "q2",
+          "answer": 25,
+          "matched": "range [0, 30]",
+          "next": "q3"
+        },
+        {
+          "question": "q3",
+          "answer": "good",
+          "matched": "option \"good\"",
+          "next": "END"
+        }
+      ],
+      "unused": []
+    },
+    {
+      "id": "r002",
+      "status": "completed",
+      "path": [
+        {
+          "question": "q1",
+          "answer": "no",
+          "matched": "option \"no\"",
+          "next": "q3"
+        },
+        {
+          "question": "q3",
+          "answer": "bad",
+          "matched": "option \"bad\"",
+          "next": "END"
+        }
+      ],
+      "unused": [
+        "q2"
+      ]
+    },
+    {
+      "id": "r003",
+      "status": "error",
+      "path": [
+        {
+          "question": "q1",
+          "answer": "yes",
+          "matched": "option \"yes\"",
+          "next": "q2"
+        }
+      ],
+      "error": {
+        "question": "q2",
+        "message": "answer must be an integer: json: cannot unmarshal bool into Go value of type int"
+      },
+      "unused": []
+    },
+    {
+      "id": "r004",
+      "status": "error",
+      "path": [
+        {
+          "question": "q1",
+          "answer": "yes",
+          "matched": "option \"yes\"",
+          "next": "q2"
+        }
+      ],
+      "error": {
+        "question": "q2",
+        "message": "missing answer"
+      },
+      "unused": []
+    }
+  ]
+}
