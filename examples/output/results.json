@@ -1,0 +1,110 @@
+{
+  "entry": "q1",
+  "responses": [
+    {
+      "response_id": "R-001",
+      "status": "ok",
+      "path": [
+        {
+          "question_id": "q1",
+          "answer": "yes",
+          "basis": "option:yes",
+          "next": "q2"
+        },
+        {
+          "question_id": "q2",
+          "answer": 15,
+          "basis": "rule:[0,17]",
+          "next": "END"
+        }
+      ],
+      "unused_answers": [],
+      "unvisited_questions": [
+        "q3",
+        "q4"
+      ]
+    },
+    {
+      "response_id": "R-002",
+      "status": "ok",
+      "path": [
+        {
+          "question_id": "q1",
+          "answer": "no",
+          "basis": "option:no",
+          "next": "q3"
+        },
+        {
+          "question_id": "q3",
+          "answer": "low",
+          "basis": "option:low",
+          "next": "q4"
+        },
+        {
+          "question_id": "q4",
+          "answer": 2,
+          "basis": "default",
+          "next": "END"
+        }
+      ],
+      "unused_answers": [
+        "q2"
+      ],
+      "unvisited_questions": [
+        "q2"
+      ]
+    },
+    {
+      "response_id": "R-003",
+      "status": "ok",
+      "path": [
+        {
+          "question_id": "q1",
+          "answer": "yes",
+          "basis": "option:yes",
+          "next": "q2"
+        },
+        {
+          "question_id": "q2",
+          "answer": 30,
+          "basis": "default",
+          "next": "q3"
+        },
+        {
+          "question_id": "q3",
+          "answer": "high",
+          "basis": "option:high",
+          "next": "END"
+        }
+      ],
+      "unused_answers": [],
+      "unvisited_questions": [
+        "q4"
+      ]
+    },
+    {
+      "response_id": "R-004",
+      "status": "error",
+      "error": "question \"q2\" expects an integer, got \"30\"",
+      "error_question_id": "q2",
+      "path": [
+        {
+          "question_id": "q1",
+          "answer": "yes",
+          "basis": "option:yes",
+          "next": "q2"
+        },
+        {
+          "question_id": "q2",
+          "answer": null,
+          "basis": ""
+        }
+      ],
+      "unused_answers": [],
+      "unvisited_questions": [
+        "q3",
+        "q4"
+      ]
+    }
+  ]
+}

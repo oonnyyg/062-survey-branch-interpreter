@@ -1,0 +1,78 @@
+{
+  "entry": "q1",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single",
+      "text": "Are you a new customer?",
+      "options": [
+        { "id": "yes", "text": "Yes", "next": "q2" },
+        { "id": "no", "text": "No", "next": "q3" }
+      ],
+      "default_next": "q2"
+    },
+    {
+      "id": "q2",
+      "type": "integer",
+      "text": "How old are you?",
+      "min": 0,
+      "max": 120,
+      "rules": [
+        { "min": 0, "max": 17, "next": "END" }
+      ],
+      "default_next": "q3"
+    },
+    {
+      "id": "q3",
+      "type": "single",
+      "text": "How satisfied are you?",
+      "options": [
+        { "id": "low", "text": "Low", "next": "q4" },
+        { "id": "high", "text": "High", "next": "END" }
+      ],
+      "default_next": "END"
+    },
+    {
+      "id": "q4",
+      "type": "integer",
+      "text": "How many times did we disappoint you?",
+      "min": 0,
+      "max": 99,
+      "rules": [],
+      "default_next": "END"
+    }
+  ],
+  "responses": [
+    {
+      "id": "R-002",
+      "answers": {
+        "q1": "no",
+        "q3": "low",
+        "q4": 2,
+        "q2": 99
+      }
+    },
+    {
+      "id": "R-001",
+      "answers": {
+        "q1": "yes",
+        "q2": 15
+      }
+    },
+    {
+      "id": "R-003",
+      "answers": {
+        "q1": "yes",
+        "q2": 30,
+        "q3": "high"
+      }
+    },
+    {
+      "id": "R-004",
+      "answers": {
+        "q1": "yes",
+        "q2": "30"
+      }
+    }
+  ]
+}
